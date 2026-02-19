@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eaf6ea;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.btn-volver {
+    background: #2e7d32;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.contenido {
+    text-align: center;
+    padding: 40px;
+}
+
+.referencia img {
+    width: 280px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.camara-box {
+    margin-top: 30px;
+}
+
+video {
+    width: 320px;
+    border-radius: 20px;
+    border: 4px solid #2e7d32;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

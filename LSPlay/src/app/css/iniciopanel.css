@@ -1,0 +1,50 @@
+/* ===============================
+   PANEL LATERAL (NO TOCA INSTRUCTOR)
+   =============================== */
+
+#panelLateral {
+    position: fixed;
+    top: 0;
+    right: -340px;      /* oculto */
+    width: 340px;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: -4px 0 18px rgba(0,0,0,0.2);
+    padding: 30px 25px;
+    transition: right 0.35s ease;
+    z-index: 3000;
+}
+
+/* visible */
+#panelLateral.activo {
+    right: 0;
+}
+
+/* botón X */
+#cerrarPanel {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #2e7d32;
+}
+
+#cerrarPanel:hover {
+    color: #1b5e20;
+}
+
+/* contenido interno */
+#panelLateral h2 {
+    margin-top: 40px;
+    color: #1e7d3c;
+}
+
+#panelLateral p {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #444;
+}

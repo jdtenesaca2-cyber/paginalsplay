@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugar - LSPlay</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+    
+    <!-- Bibliotecas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="header">
+    <nav class="navbar">
+        <a href="inicio.html" class="brand">
+            <img src="../images/logo.png" alt="LSPlay Logo" class="logo-img">
+            <span class="logo-text">LSPlay</span>
+        </a>
+
+        <ul class="nav-menu">
+            <li><a href="inicio.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="aprender.html"><i class="fas fa-book"></i> Aprender</a></li>
+            <li><a href="inicio_jugar.html" class="active"><i class="fas fa-gamepad"></i> Jugar</a></li>
+            <li><a href="instructor.html"><i class="fas fa-chalkboard-teacher"></i> Instructor</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="#" class="btn-login" id="abrirLogin">
+                <i class="fas fa-user"></i> Iniciar Sesión
+            </a>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION CON ESTADÍSTICAS -->
+    <div class="hero-text animate__animated animate__fadeInDown">
+        <h1>¡Bienvenido a la Aventura! 🎮</h1>
+        <h2>Desafía tus conocimientos de lengua de señas</h2>
+        <p>Completa niveles, gana estrellas y desbloquea nuevos desafíos</p>
+        
+        <!-- Stats del jugador -->
+        <div class="player-stats">
+            <div class="stat-box">
+                <i class="fas fa-star"></i>
+                <div class="stat-info">
+                    <span class="stat-number" id="totalStars">0</span>
+                    <span class="stat-label">Estrellas</span>
+                </div>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-trophy"></i>
+                <div class="stat-info">
+                    <span class="stat-number" id="totalScore">0</span>
+                    <span class="stat-label">Puntos</span>
+                </div>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-fire"></i>
+                <div class="stat-info">
+                    <span class="stat-number" id="currentStreak">0</span>
+                    <span class="stat-label">Racha</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- SECCIÓN DE NIVELES -->
+<section class="game-levels-section">
+    
+    <!-- Título y filtros -->
+    <div class="section-header">
+        <div class="section-title">
+            <h2><i class="fas fa-map"></i> Mapa de Niveles</h2>
+            <div class="title-underline"></div>
+        </div>
+        
+        <div class="level-filters">
+            <button class="filter-btn active" data-filter="all">
+                <i class="fas fa-th"></i> Todos
+            </button>
+            <button class="filter-btn" data-filter="completed">
+                <i class="fas fa-check-circle"></i> Completados
+            </button>
+            <button class="filter-btn" data-filter="locked">
+                <i class="fas fa-lock"></i> Bloqueados
+            </button>
+        </div>
+    </div>
+
+    <!-- Contenedor de Niveles con Camino -->
+    <div class="levels-map">
+        <svg class="level-path" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid meet">
+            <!-- Camino SVG que conecta los niveles -->
+            <path id="gamePath" d="M 100,100 Q 300,100 400,200 T 600,300 T 800,400 T 1000,500 T 1100,700" 
+                  fill="none" 
+                  stroke="url(#pathGradient)" 
+                  stroke-width="8" 
+                  stroke-dasharray="10,5"/>
+            
+            <defs>
+                <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#2e7d32;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#6a1b9a;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <!-- NIVEL 1: Abecedario Básico -->
+        <div class="level-node unlocked animate__animated animate__bounceIn" 
+             data-level="1" 
+             data-status="unlocked"
+             style="top: 10%; left: 8%;">
+            <div class="level-circle level-1">
+                <div class="level-number">1</div>
+                <div class="level-icon">
+                    <i class="fas fa-hand-pointer"></i>
+                </div>
+                <div class="stars-display">
+                    <i class="fas fa-star earned"></i>
+                    <i class="fas fa-star earned"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="level-info">
+                <h3>Abecedario Básico</h3>
+                <p>Letras A - Z</p>
+                <div class="level-progress">
+                    <div class="progress-bar-small">
+                        <div class="progress-fill-small" style="width: 70%"></div>
+                    </div>
+                    <span>70%</span>
+                </div>
+                <button class="btn-play" onclick="playLevel(1)">
+                    <i class="fas fa-play"></i> Jugar
+                </button>
+            </div>
+        </div>
+
+        <!-- NIVEL 3: Palabras Sencillas -->
+        <div class="level-node locked animate__animated animate__bounceIn" 
+             data-level="2" 
+             data-status="locked"
+             style="top: 40%; left: 50%; animation-delay: 0.3s;">
+            <div class="level-circle level-3">
+                <div class="level-number">2</div>
+                <div class="level-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="stars-display">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="level-info locked-info">
+                <h3>Palabras Sencillas</h3>
+                <p>🔒 Completa el Nivel 2</p>
+                <div class="unlock-requirement">
+                    <i class="fas fa-star"></i>
+                    <span>Necesitas 2★ en Nivel 2</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- NIVEL 4: Verbos Comunes -->
+        <div class="level-node locked animate__animated animate__bounceIn" 
+             data-level="3" 
+             data-status="locked"
+             style="top: 55%; left: 68%; animation-delay: 0.4s;">
+            <div class="level-circle level-4">
+                <div class="level-number">3</div>
+                <div class="level-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="stars-display">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="level-info locked-info">
+                <h3>Verbos Comunes</h3>
+                <p>🔒 Completa el Nivel 3</p>
+                <div class="unlock-requirement">
+                    <i class="fas fa-star"></i>
+                    <span>Necesitas 2★ en Nivel 3</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- NIVEL BONUS: Desafío Final -->
+        <div class="level-node locked bonus-level animate__animated animate__bounceIn" 
+             data-level="bonus" 
+             data-status="locked"
+             style="top: 85%; left: 92%; animation-delay: 0.6s;">
+            <div class="level-circle level-bonus">
+                <div class="level-number"><i class="fas fa-crown"></i></div>
+                <div class="level-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="stars-display">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="level-info locked-info">
+                <h3>🏆 Desafío Final</h3>
+                <p>🔒 Completa todos los niveles</p>
+                <div class="unlock-requirement">
+                    <i class="fas fa-trophy"></i>
+                    <span>Nivel Maestro</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Logros y Recompensas -->
+    <div class="achievements-section">
+        <h3><i class="fas fa-award"></i> Logros Recientes</h3>
+        <div class="achievements-grid">
+            <div class="achievement-card locked">
+                <i class="fas fa-medal"></i>
+                <h4>Primera Victoria</h4>
+                <p>Completa el primer nivel</p>
+            </div>
+            <div class="achievement-card locked">
+                <i class="fas fa-star"></i>
+                <h4>Estrella Brillante</h4>
+                <p>Consigue 3 estrellas en un nivel</p>
+            </div>
+            <div class="achievement-card locked">
+                <i class="fas fa-fire"></i>
+                <h4>En Racha</h4>
+                <p>Juega 7 días seguidos</p>
+            </div>
+            <div class="achievement-card locked">
+                <i class="fas fa-bolt"></i>
+                <h4>Relámpago</h4>
+                <p>Completa un nivel en menos de 2 min</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- Modal de Información del Nivel -->
+<div id="levelModal" class="modal">
+    <div class="modal-content level-modal">
+        <button class="close-modal" onclick="closeLevelModal()">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="modal-header">
+            <div class="modal-icon">
+                <i class="fas fa-gamepad"></i>
+            </div>
+            <h2 id="modalLevelName">Nivel 1: Abecedario Básico</h2>
+            <p id="modalLevelDescription">Aprende las primeras 10 letras del abecedario</p>
+        </div>
+        
+        <div class="modal-body">
+            <div class="level-details">
+                <div class="detail-item">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <span>15 Preguntas</span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-clock"></i>
+                    <span>5 minutos</span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-star"></i>
+                    <span>Hasta 3 estrellas</span>
+                </div>
+            </div>
+            
+            <div class="star-requirements">
+                <h4>Requisitos para estrellas:</h4>
+                <div class="star-req">
+                    <i class="fas fa-star"></i> 1 Estrella: 50% de aciertos
+                </div>
+                <div class="star-req">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i> 2 Estrellas: 75% de aciertos
+                </div>
+                <div class="star-req">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 3 Estrellas: 90% de aciertos
+                </div>
+            </div>
+            
+            <div class="best-score" id="modalBestScore">
+                <i class="fas fa-trophy"></i>
+                <span>Mejor puntuación: 0 puntos</span>
+            </div>
+        </div>
+        
+        <div class="modal-footer">
+            <button class="btn-cancel" onclick="closeLevelModal()">
+                Cancelar
+            </button>
+            <button class="btn-start-game" id="modalStartBtn" onclick="startGame()">
+                <i class="fas fa-play"></i> ¡Comenzar!
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Acerca de LSPlay</h4>
+            <p>Plataforma interactiva para aprender lenguaje de señas de manera divertida y efectiva.</p>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Enlaces Rápidos</h4>
+            <ul>
+                <li><a href="aprender.html">Aprender</a></li>
+                <li><a href="inicio_jugar.html">Jugar</a></li>
+                <li><a href="instructor.html">Instructor</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Síguenos</h4>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-logos">
+        <img src="../images/lf1.png" alt="Logo 1">
+        <img src="../images/trofeo.png" alt="Trofeo">
+        <img src="../images/crayo.jpeg" alt="Crayo">
+    </div>
+
+    <div class="footer-bottom">
+        <p class="creditos">
+            © 2024 LSPlay. Nos alegra que hayas visitado nuestra página.
+        </p>
+    </div>
+</footer>
+
+<!-- PANEL LOGIN -->
+<div id="panelLogin">
+    <button id="cerrarLogin"><i class="fas fa-times"></i></button>
+    <iframe src="login.html" frameborder="0" class="login-frame"></iframe>
+</div>
+
+<script src="../js/menu.js"></script>
+<script src="../js/game_levels.js"></script>
+
+</body>
+</html>

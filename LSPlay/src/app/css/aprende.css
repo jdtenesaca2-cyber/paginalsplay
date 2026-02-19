@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #eaf7ea;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #2e7d32;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 45px;
+}
+
+.btn-back {
+    background: #2e7d32;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+/* TÍTULO */
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title h1 {
+    font-size: 40px;
+}
+
+.title h2 {
+    color: #2e7d32;
+    font-size: 22px;
+}
+
+/* VISOR */
+.app {
+    display: flex;
+    gap: 20px;
+    padding: 20px 40px;
+}
+
+/* GALERÍA */
+.sidebar {
+    width: 320px;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.sidebar h3 {
+    margin-bottom: 10px;
+    color: #2e7d32;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 3px solid transparent;
+}
+
+.gallery img:hover {
+    border-color: #2e7d32;
+}
+
+/* PREVIEW GRANDE */
+.preview {
+    flex: 1;
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.preview img {
+    max-width: 100%;
+    max-height: 500px;   /* 👈 limita el tamaño */
+    display: block;
+    margin: auto;
+    object-fit: contain;
+    border-radius: 15px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Jugar | LSPlay</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="header">
+    <nav class="navbar">
+        <a href="inicio.html" class="brand">
+            <img src="../images/logo.png" class="logo-img">
+            <span class="logo-text">LSPlay</span>
+        </a>
+
+        <a href="inicio.html" class="btn-login">⟵ Volver </a>
+    </nav>
+
+    <div class="hero-text">
+        <h1>Juego Interactivo</h1>
+        <p>Escribe la letra correcta</p>
+    </div>
+</header>
+
+<!-- JUEGO -->
+<section class="game">
+
+    <h2>¿Qué letra representa esta seña?</h2>
+
+    <div class="game-card">
+
+        <img src="../images/B.jpg" id="imagenSena" alt="Seña">
+   
+
+
+        <input 
+            type="text" 
+            id="respuestaUsuario" 
+            placeholder="Escribe la letra"
+            maxlength="1"
+            style="text-align:center; font-size:1.2rem; padding:8px; border-radius:10px; border:1px solid #ccc;"
+        >
+
+        <div class="options">
+            <button onclick="verificarRespuesta()">Verificar</button>
+        </div>
+
+        <p id="resultado"></p>
+
+    </div>
+
+</section>
+
+<script src="../json/juego_escribir.js"></script>
+
+</body>
+</html>

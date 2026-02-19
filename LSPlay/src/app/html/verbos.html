@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Aprender | LSPlay</title>
+    <link rel="stylesheet" href="../css/aprende.css">
+</head>
+<body>
+
+<!-- HEADER LSPlay -->
+<header class="header">
+    <div class="logo">
+        <img src="../images/logo.png">
+        <span>LSPlay</span>
+    </div>
+
+    <a href="inicio.html" class="btn-back">← Volver al inicio</a>
+</header>
+
+<!-- TÍTULO -->
+<section class="title">
+    <h1>Aprender</h1>
+    <h2>Explora los temas de lengua de señas ABECEDARIO </h2>
+</section>
+
+<!-- VISOR DE IMÁGENES -->
+<div class="app">
+
+    <!-- GALERÍA -->
+    <aside class="sidebar">
+        <h3>Galería</h3>
+
+        <div class="gallery">
+            <img src="../images/HI.png" onclick="changeImage(this)">
+            <img src="../images/adios.png" onclick="changeImage(this)">
+            <img src="../images/Comer.png" onclick="changeImage(this)">
+            <img src="../images/Dormir (2).jpg" onclick="changeImage(this)">
+            
+        </div>
+    </aside>
+
+    
+
+    <!-- PREVIEW GRANDE -->
+    <main class="preview">
+        <img id="previewImage" src="../images/cargando.jpg">
+    </main>
+
+</div>
+
+<script>
+function changeImage(img) {
+    document.getElementById("previewImage").src = img.src;
+}
+</script>
+
+</body>
+</html>

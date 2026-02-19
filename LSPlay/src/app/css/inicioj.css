@@ -1,0 +1,425 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #e8f5e9;
+    color: #333;
+}
+
+.header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.header h2 {
+    font-size: 1.4rem;
+    color: #1e7d3c;
+    margin-bottom: 10px;
+}
+
+.activities {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 140px;
+    height: 140px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+    padding: 10px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.card img {
+    width: 140px;       /* tamaño de la imagen igual al contenedor */
+    height: 140px;      
+    border-radius: 50%; /* círculo perfecto */
+    object-fit: cover;  /* que la imagen no se deforme */
+    transition: transform 0.2s;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.card p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: #fff;
+    text-align: center;
+    border-top: 4px solid #a5d6a7;
+}
+
+.logos img {
+    width: 70px;
+    margin: 10px;
+}
+
+.creditos {
+    font-size: 0.9rem;
+    margin-top: 15px;
+    color: #444;
+}
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+/* LOGO + TEXTO */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 40px;
+    height: auto;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+/* BOTÓN LOGIN */
+.btn-login {
+    text-decoration: none;
+    background: #2e7d32;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.btn-login:hover {
+    background: #1b5e20;
+}
+
+.instructor {
+    padding: 50px 20px;
+    background: #f1f8f4;
+    text-align: center;
+}
+
+.instructor-sub {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.instructor-grid {
+    display: flex;
+    gap: 30px;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    padding: 30px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+.instructor-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.instructor-grid::-webkit-scrollbar-thumb {
+    background: #a5d6a7;
+    border-radius: 10px;
+}
+
+.instructor-card {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 18px;
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.12);
+
+    width: 320px;          /* 👈 ancho bonito, NO gigante */
+    min-height: 180px;     /* 👈 mantiene forma de tarjeta */
+    flex-shrink: 0;
+
+    text-align: center;
+    scroll-snap-align: center;
+}
+
+
+.instructor-card h3 {
+    color: #1e7d3c;
+    margin-bottom: 10px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.brand:hover {
+    opacity: 0.85;
+}
+
+/* JUEGO */
+.game {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f1f8f4;
+}
+
+.game-card {
+    background: white;
+    max-width: 400px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+}
+
+.game-card img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.options button {
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background: #2e7d32;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.options button:hover {
+    background: #1b5e20;
+}
+
+#resultado {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Animación fade para la imagen */
+#imagenSena {
+    width: 150px;
+    margin-bottom: 20px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Mensaje animado */
+#resultado {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1; /* visible siempre */
+}
+
+/* Efectos en botones */
+.options button.correct {
+    background-color: #4caf50 !important; /* verde */
+    transition: background-color 0.3s;
+}
+
+.options button.wrong {
+    background-color: #f44336 !important; /* rojo */
+    transition: background-color 0.3s;
+}
+
+/* CONTENEDOR */
+.aprender-grande {
+    gap: 80px;
+}
+
+/* CARD GRANDE Y CENTRADA */
+.aprender-grande .aprender-card {
+    width: 280px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* IMAGEN BIEN ESCALADA */
+.aprender-grande .aprender-card img {
+    width: 800px;
+    height: 800px;
+    object-fit: contain;
+    margin-bottom: 300px;
+}
+
+/* TEXTO */
+.aprender-grande .aprender-card p {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* UN SOLO RECUADRO BLANCO */
+.contenedor-blanco {
+    background: white;
+    padding: 25px 35px;
+    border-radius: 20px;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 520px;
+    margin: auto;
+}
+
+.opcion img {
+    width: 50px;
+}
+
+.opcion span {
+    font-size: 1rem;
+}
+
+/* PANEL LOGIN LATERAL */
+#panelLogin {
+    position: fixed;
+    top: 0;
+    right: -380px;
+    width: 380px;
+    height: 100%;
+    background: white;
+    box-shadow: -4px 0 18px rgba(0,0,0,0.25);
+    transition: right 0.35s ease;
+    z-index: 5000;
+}
+
+/* visible */
+#panelLogin.activo {
+    right: 0;
+}
+
+/* botón X */
+#cerrarLogin {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #2e7d32;
+    z-index: 10;
+}
+
+/* iframe */
+.login-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* PANTALLA DE VALIDACIÓN */
+.pantalla {
+    margin: 15px auto;
+    width: 220px;
+    height: 60px;
+    border-radius: 12px;
+    background: #cfd8dc;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.4s, color 0.4s;
+}
+
+/* ESTADOS */
+.pantalla.correcto {
+    background: #4caf50;
+    color: white;
+}
+
+.pantalla.incorrecto {
+    background: #f44336;
+    color: white;
+}
+
+.game-card input {
+    margin: 10px 0;
+    padding: 8px;
+    font-size: 1.2rem;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.game-card button {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background: #2e7d32;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.game-card button:hover {
+    background: #1b5e20;
+}
+
+video {
+    width: 220px;
+    border-radius: 12px;
+    margin: 10px 0;
+    background: black;
+}
+
+.pantalla {
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+    background: #cfd8dc;
+    font-weight: bold;
+}
+
+.pantalla.activo {
+    background: #4caf50;
+    color: white;
+}

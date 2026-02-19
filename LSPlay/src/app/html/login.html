@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro | LSPlay</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="logo" class="logo">
+
+            <h1>¡Bienvenido a LSPlay!</h1>
+            <p class="subtitle">Regístrate para comenzar</p>
+
+            <form>
+                <input type="text" placeholder="Usuario" required>
+                <input type="email" placeholder="Correo electrónico" required>
+
+                <button type="submit">Registrarse</button>
+            </form>
+
+            <p class="login">
+                ¿Ya tienes cuenta? <a href="#">Inicia sesión</a>
+            </p>
+        </div>
+    </div>
+
+<script>
+document.getElementById('registroForm').addEventListener('submit', async e => {
+    e.preventDefault();
+
+    const usuario = document.getElementById('usuario').value;
+    const correo = document.getElementById('correo').value;
+
+    const response = await fetch('http://localhost:3000/registro', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre: usuario, correo })
+    });
+
+    const result = await response.text();
+    alert(result);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+body {
+    background: #f1f8e9;
+    text-align: center;
+    font-family: Arial;
+}
+
+header {
+    padding: 20px;
+}
+
+.volver {
+    text-decoration: none;
+    color: #007b4c;
+    font-weight: bold;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 20px;
+}
+
+.item {
+    width: 160px;
+    background: white;
+    padding: 15px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.item img {
+    width: 70px;
+}
+
+/* CONTENEDOR */
+.aprender-grande {
+    gap: 80px;
+}
+
+/* CARD GRANDE Y CENTRADA */
+.aprender-grande .aprender-card {
+    width: 580px;
+    height: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* IMAGEN BIEN ESCALADA */
+.aprender-grande .aprender-card img {
+    width: 800px;
+    height: 800px;
+    object-fit: contain;
+    margin-bottom: 300px;
+}
+
+/* TEXTO */
+.aprender-grande .aprender-card p {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.activities {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fff;
+  width: 220px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  max-height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Abecedario un poco más grande pero CONTROLADO */
+.card.abecedario img {
+  max-height: 180px;
+}
+/* BOTÓN LOGIN */
+.btn-login {
+    text-decoration: none;
+    background: #2e7d32;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.btn-login:hover {
+    background: #1b5e20;
+}
+
+.instructor {
+    padding: 50px 20px;
+    background: #f1f8f4;
+    text-align: center;
+}
+
+.instructor-sub {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.instructor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.instructor-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+}
+
+.instructor-card h3 {
+    color: #1e7d3c;
+    margin-bottom: 10px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.brand:hover {
+    opacity: 0.85;
+}
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+/* LOGO + TEXTO */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 40px;
+    height: auto;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2e7d32;
+}

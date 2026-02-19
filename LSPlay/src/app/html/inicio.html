@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSPlay - Lenguaje de Señas Play</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+    
+    <!-- 🎨 Biblioteca de iconos: Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 🎨 Biblioteca de animaciones: Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- 🎨 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<script>
+let lastScroll = 0;
+const hero = document.querySelector('.hero-text');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    // Evita efecto raro arriba del todo
+    if (currentScroll < 50) {
+        hero.classList.remove('oculto');
+        lastScroll = currentScroll;
+        return;
+    }
+
+    if (currentScroll > lastScroll) {
+        // Scroll hacia abajo → ocultar hero
+        hero.classList.add('oculto');
+    } else {
+        // Scroll hacia arriba → mostrar hero
+        hero.classList.remove('oculto');
+    }
+
+    lastScroll = currentScroll;
+});
+</script>
+
+
+<body>
+
+<!-- 🔹 NAVBAR CON NAVEGACIÓN -->
+<header class="header">
+    <nav class="navbar">
+        <!-- IZQUIERDA: LOGO + TEXTO -->
+        <a href="inicio.html" class="brand">
+            <img src="../images/logo.png" alt="LSPlay Logo" class="logo-img">
+            <span class="logo-text">LSPlay</span>
+        </a>
+
+        <!-- CENTRO: MENÚ DE NAVEGACIÓN -->
+        <ul class="nav-menu">
+            <li><a href="inicio.html" class="active">
+                <i class="fas fa-home"></i> Inicio
+            </a></li>
+            <li><a href="aprender.html">
+                <i class="fas fa-book"></i> Aprender
+            </a></li>
+            <li><a href="inicio_jugar.html">
+                <i class="fas fa-gamepad"></i> Jugar
+            </a></li>
+            <li><a href="instructor.html">
+                <i class="fas fa-chalkboard-teacher"></i> Instructor
+            </a></li>
+        </ul>
+
+        <!-- DERECHA: BOTÓN LOGIN + MENÚ MÓVIL -->
+        <div class="nav-right">
+            <a href="#" class="btn-login" id="abrirLogin">
+                <i class="fas fa-user"></i> Iniciar Sesión
+            </a>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            <button>
+            </div>
+    </nav>
+
+    <!-- TEXTO CENTRAL CON ANIMACIÓN -->
+    <div class="hero-text animate__animated animate__fadeInDown">
+        <h1>Bienvenido a LSPlay</h1>
+        <h2>Aprendiendo lengua de señas de forma divertida</h2>
+        <p>Elige una de las siguientes actividades y comienza tu aventura</p>
+        
+        <!-- Botón CTA adicional -->
+        <a href="prototipo.html" class="btn-hero">
+            <i class="fas fa-play-circle"></i> Comenzar a Jugar
+        </a>
+    </div>
+</header>
+
+<!-- 🔹 ACTIVIDADES CON TARJETAS CIRCULARES MEJORADAS -->
+<section class="activities">
+    <div class="section-title animate__animated animate__fadeIn">
+        <h2>Explora Nuestras Actividades</h2>
+        <div class="title-underline"></div>
+    </div>
+
+    <div class="activities-container">
+        <!-- Tarjeta APRENDER -->
+        <a href="aprender.html" class="card animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+            <div class="card-icon-wrapper">
+                <div class="card-icon">
+                    <img src="../images/aprende.png" alt="Aprender">
+                </div>
+                <div class="card-badge">
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3>APRENDER</h3>
+                <p>Descubre el abecedario y vocabulario en lengua de señas</p>
+                <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+            </div>
+        </a>
+
+        <!-- Tarjeta INSTRUCTOR -->
+        <a href="instructor.html" class="card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+            <div class="card-icon-wrapper">
+                <div class="card-icon">
+                    <img src="../images/intructor.png" alt="Instructor">
+                </div>
+                <div class="card-badge instructor-badge">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3>INSTRUCTOR</h3>
+                <p>Practica con un instructor virtual y mejora tus habilidades</p>
+                <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+            </div>
+        </a>
+
+        <!-- Tarjeta JUGAR -->
+        <a href="inicio_jugar.html" class="card animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
+            <div class="card-icon-wrapper">
+                <div class="card-icon">
+                    <img src="../images/jugar.png" alt="Jugar">
+                </div>
+                <div class="card-badge game-badge">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3>JUGAR</h3>
+                <p>Desafíos y niveles para poner a prueba tu conocimiento</p>
+                <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- 🔹 SECCIÓN DE CARACTERÍSTICAS -->
+<section class="features">
+    <div class="feature-box">
+        <i class="fas fa-trophy feature-icon"></i>
+        <h3>Aprende Jugando</h3>
+        <p>Sistema de niveles progresivos</p>
+    </div>
+    <div class="feature-box">
+        <i class="fas fa-chart-line feature-icon"></i>
+        <h3>Sigue tu Progreso</h3>
+        <p>Estadísticas y logros</p>
+    </div>
+    <div class="feature-box">
+        <i class="fas fa-users feature-icon"></i>
+        <h3>Comunidad</h3>
+        <p>Comparte con otros estudiantes</p>
+    </div>
+</section>
+
+<!-- 🔹 FOOTER MEJORADO -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Acerca de LSPlay</h4>
+            <p>Plataforma interactiva para aprender lenguaje de señas de manera divertida y efectiva.</p>
+        </div>
+        
+        
+        
+        
+    </div>
+    
+    <div class="footer-logos">
+        <img src="../images/lf1.png" alt="Logo 1">
+        <img src="../images/trofeo.png" alt="Trofeo">
+        <img src="../images/crayo.jpeg" alt="Crayo">
+    </div>
+
+    <div class="footer-bottom">
+        <p class="creditos">
+            © 2026 LSPlay. Nos alegra que hayas visitado nuestra página y esperamos que el material educativo haya sido de utilidad.
+        </p>
+    </div>
+</footer>
+
+<!-- PANEL LOGIN LATERAL -->
+<div id="panelLogin">
+    <button id="cerrarLogin"><i class="fas fa-times"></i></button>
+    <iframe src="login.html" frameborder="0" class="login-frame"></iframe>
+</div>
+
+<!-- Scripts -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Efecto scroll hero-text
+    let lastScroll = 0;
+    const hero = document.querySelector('.hero-text');
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll < 50) {
+            hero.classList.remove('oculto');
+            lastScroll = currentScroll;
+            return;
+        }
+        if (currentScroll > lastScroll) {
+            hero.classList.add('oculto');
+        } else {
+            hero.classList.remove('oculto');
+        }
+        lastScroll = currentScroll;
+    });
+});
+</script>
+
+<script src="../json/panel.js"></script>
+<script src="../js/menu.js"></script>
+
+</body>
+</html>

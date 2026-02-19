@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abecedario LSPlay</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+    
+    <!-- Bibliotecas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="header">
+    <nav class="navbar">
+        <a href="inicio.html" class="brand">
+            <img src="../images/logo.png" alt="LSPlay Logo" class="logo-img">
+            <span class="logo-text">LSPlay</span>
+        </a>
+
+        <ul class="nav-menu">
+            <li><a href="inicio.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="aprender.html" class="active"><i class="fas fa-book"></i> Aprender</a></li>
+            <li><a href="inicio_jugar.html"><i class="fas fa-gamepad"></i> Jugar</a></li>
+            <li><a href="instructor.html"><i class="fas fa-chalkboard-teacher"></i> Instructor</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="aprender.html" class="btn-back">
+                <i class="fas fa-arrow-left"></i> Volver
+            </a>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+    </nav>
+
+    <div class="hero-text animate__animated animate__fadeInDown">
+        <h1>Abecedario en Lengua de Señas</h1>
+        <h2>Aprende cada letra del alfabeto</h2>
+        <p>Explora y practica las señas de la A a la Z</p>
+    </div>
+</header>
+
+<!-- SECCIÓN DE APRENDIZAJE -->
+<section class="learning-viewer">
+    
+    <!-- Panel de Control -->
+    <div class="learning-controls">
+        <button id="prevLetter" class="control-btn">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <div class="letter-indicator">
+            <span class="current-letter" id="currentLetter">A</span>
+            <span class="letter-count" id="letterCount">1 / 27</span>
+        </div>
+        
+        <button id="nextLetter" class="control-btn">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Visor Principal con Avatar 3D -->
+    <div class="viewer-container animate__animated animate__fadeIn">
+        
+        <!-- Avatar 3D mostrando la seña -->
+    <div class="avatar-display">
+        <div class="avatar-wrapper">
+            <!-- Imagen real del avatar 3D -->
+            <img id="avatarImage" src="../images/abc/avatar_A.png" alt="Seña letra A" class="avatar-3d">
+        
+            <!-- Placeholder con icono (se muestra si no hay imagen) -->
+            <div id="placeholderIcon" class="placeholder-icon" style="display: none;">
+                <i class="fas fa-hand-fist"></i>
+                <div class="letter-overlay">A</div>
+        </div>
+        
+        <!-- Indicador de carga -->
+        <div class="loading-indicator" id="loadingIndicator">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Cargando...</p>
+        </div>
+    </div>
+    
+    <!-- Letra grande -->
+    <div class="letter-display">
+        <h2 id="displayLetter">A</h2>
+        <!-- Badge de dificultad se agregará dinámicamente -->
+    </div>
+</div>
+
+        <!-- Información adicional -->
+        <div class="info-panel">
+            <div class="info-card">
+                <i class="fas fa-info-circle"></i>
+                <h4>Descripción</h4>
+                <p id="letterDescription">
+                    Forma un puño con la mano derecha y mantenla al frente
+                </p>
+            </div>
+            
+            <div class="info-card">
+                <i class="fas fa-lightbulb"></i>
+                <h4>Consejo</h4>
+                <p id="letterTip">
+                    Mantén el pulgar al costado del puño cerrado
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navegador de Letras -->
+    <div class="alphabet-navigator">
+        <h3><i class="fas fa-th"></i> Selecciona una letra</h3>
+        <div class="alphabet-grid" id="alphabetGrid">
+            <!-- Se generará dinámicamente con JavaScript -->
+        </div>
+    </div>
+
+    <!-- Botones de Acción -->
+    <div class="action-buttons">
+        <button class="btn-action" id="btnPractice">
+            <i class="fas fa-redo"></i> Practicar esta letra
+        </button>
+        <button class="btn-action secondary" id="btnTest">
+            <i class="fas fa-gamepad"></i> Hacer prueba
+        </button>
+    </div>
+
+</section>
+
+<!-- Progreso del usuario -->
+<div class="progress-section">
+    <h3>Tu Progreso en el Abecedario</h3>
+    <div class="overall-progress">
+        <div class="progress-bar-large">
+            <div class="progress-fill-large" id="overallProgress" style="width: 0%"></div>
+        </div>
+        <span class="progress-percentage" id="progressPercentage">0%</span>
+    </div>
+    <p class="progress-text">
+        <i class="fas fa-check-circle"></i> 
+        <span id="learnedCount">0</span> de 27 letras aprendidas
+    </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Acerca de LSPlay</h4>
+            <p>Plataforma interactiva para aprender lenguaje de señas de manera divertida y efectiva.</p>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Enlaces Rápidos</h4>
+            <ul>
+                <li><a href="aprender.html">Aprender</a></li>
+                <li><a href="inicio_jugar.html">Jugar</a></li>
+                <li><a href="instructor.html">Instructor</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Síguenos</h4>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-logos">
+        <img src="../images/lf1.png" alt="Logo 1">
+        <img src="../images/trofeo.png" alt="Trofeo">
+        <img src="../images/crayo.jpeg" alt="Crayo">
+    </div>
+
+    <div class="footer-bottom">
+        <p class="creditos">
+            © 2024 LSPlay. Nos alegra que hayas visitado nuestra página.
+        </p>
+    </div>
+</footer>
+
+<script src="../js/menu.js"></script>
+<script src="../js/aprender_abc.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor | LSPlay</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+    
+    <!-- Bibliotecas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- 🔹 NAVBAR -->
+<header class="header">
+    <nav class="navbar">
+        <!-- LOGO + TEXTO -->
+        <a href="inicio.html" class="brand">
+            <img src="../images/logo.png" alt="LSPlay Logo" class="logo-img">
+            <span class="logo-text">LSPlay</span>
+        </a>
+
+        <!-- MENÚ DE NAVEGACIÓN -->
+        <ul class="nav-menu">
+            <li><a href="inicio.html">
+                <i class="fas fa-home"></i> Inicio
+            </a></li>
+            <li><a href="aprender.html">
+                <i class="fas fa-book"></i> Aprender
+            </a></li>
+            <li><a href="inicio_jugar.html">
+                <i class="fas fa-gamepad"></i> Jugar
+            </a></li>
+            <li><a href="instructor.html" class="active">
+                <i class="fas fa-chalkboard-teacher"></i> Instructor
+            </a></li>
+        </ul>
+
+        <!-- BOTÓN LOGIN + MENÚ MÓVIL -->
+        <div class="nav-right">
+            <a href="#" class="btn-login" id="abrirLogin">
+                <i class="fas fa-user"></i> Iniciar Sesión
+            </a>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i> Menu
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="hero-text animate__animated animate__fadeInDown">
+        <h1>Instructor LSPlay</h1>
+        <h2>Guía educativa de la plataforma</h2>
+        <p>Conoce cómo LSPlay apoya la enseñanza y el aprendizaje inclusivo</p>
+    </div>
+</header>
+
+<!-- 🔹 SECCIÓN DE INTRODUCCIÓN -->
+<section class="instructor-intro">
+    <div class="intro-content animate__animated animate__fadeIn">
+        <div class="intro-icon">
+            <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h2>¿Cómo funciona la plataforma?</h2>
+        <p class="instructor-sub">
+            LSPlay es una herramienta educativa diseñada para facilitar el aprendizaje
+            de la lengua de señas mediante actividades visuales e interactivas que se adaptan
+            a diferentes ritmos y estilos de aprendizaje.
+        </p>
+    </div>
+</section>
+
+<!-- 🔹 CONTENIDO PRINCIPAL - TARJETAS INFORMATIVAS -->
+<section class="instructor">
+    <div class="section-title">
+        <h2>Características Principales</h2>
+        <div class="title-underline"></div>
+    </div>
+
+    <div class="instructor-grid">
+
+        <!-- Tarjeta 4: Misión -->
+        <div class="instructor-card highlight-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+            <div class="card-icon-circle mission">
+                <i class="fas fa-bullseye"></i>
+            </div>
+            <h3><i class="fas fa-heart"></i> Misión</h3>
+            <p>
+                Brindar una plataforma educativa accesible que permita a cualquier persona aprender 
+                Lengua de Señas desde cero, fomentando la inclusión, la empatía y la comunicación sin barreras.
+            </p>
+            <div class="card-highlight mission-highlight">
+                <i class="fas fa-star"></i> Inclusión para todos
+            </div>
+        </div>
+
+        <!-- Tarjeta 5: Visión -->
+        <div class="instructor-card highlight-card animate__animated animate__fadeInUp" style="animation-delay: 0.5s">
+            <div class="card-icon-circle vision">
+                <i class="fas fa-eye"></i>
+            </div>
+            <h3><i class="fas fa-flag"></i> Visión</h3>
+            <p>
+                Ser una plataforma de referencia en el aprendizaje de la Lengua de Señas, 
+                contribuyendo a una sociedad más inclusiva y consciente de la diversidad comunicativa.
+            </p>
+            <div class="card-highlight vision-highlight">
+                <i class="fas fa-globe"></i> Cambio social
+            </div>
+        </div>
+
+<!-- Tarjeta: Objetivos de Desarrollo Sostenible -->
+        <div class="instructor-card highlight-card animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
+            <div class="card-icon-circle ods">
+                <i class="fas fa-leaf"></i>
+            </div>
+            <h3><i class="fas fa-bullseye"></i> Objetivos de Desarrollo Sostenible</h3>
+            <p>
+                Contribuimos al <strong>ODS 4</strong> garantizando una educación inclusiva y de calidad a través 
+                del aprendizaje de la Lengua de Señas, y al <strong>ODS 10</strong> promoviendo la reducción de 
+                desigualdades y la inclusión de las personas con discapacidad auditiva.
+            </p>
+            <div class="card-highlight ods-highlight">
+                <i class="fas fa-globe-americas"></i> ODS 4 · ODS 10
+            </div>
+        </div>
+
+                <!-- Tarjeta 1: Metodología -->
+        <div class="instructor-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+            <div class="card-icon-circle methodology">
+                <i class="fas fa-book-open"></i>
+            </div>
+            <h3><i class="fas fa-lightbulb"></i> Metodología</h3>
+            <p>
+                La plataforma presenta contenidos progresivos, comenzando desde
+                señas básicas hasta estructuras más complejas, garantizando un
+                aprendizaje sólido y efectivo.
+            </p>
+            <div class="card-highlight">
+                <i class="fas fa-check-circle"></i> Aprendizaje paso a paso
+            </div>
+        </div>
+
+        <!-- Tarjeta 2: Apoyo al aprendizaje -->
+        <div class="instructor-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+            <div class="card-icon-circle support">
+                <i class="fas fa-hands-helping"></i>
+            </div>
+            <h3><i class="fas fa-users"></i> Apoyo al aprendizaje</h3>
+            <p>
+                LSPlay apoya a docentes, familiares y estudiantes a reforzar
+                la comunicación inclusiva, creando puentes de entendimiento
+                en comunidades educativas y familiares.
+            </p>
+            <div class="card-highlight">
+                <i class="fas fa-check-circle"></i> Para todos los niveles
+            </div>
+        </div>
+
+        <!-- Tarjeta 3: Formación de nuevos usuarios -->
+        <div class="instructor-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
+            <div class="card-icon-circle training">
+                <i class="fas fa-user-graduate"></i>
+            </div>
+            <h3><i class="fas fa-rocket"></i> Formación de nuevos usuarios</h3>
+            <p>
+                Está diseñada para personas sin conocimientos previos,
+                facilitando el aprendizaje autónomo a través de interfaces
+                intuitivas y recursos multimedia.
+            </p>
+            <div class="card-highlight">
+                <i class="fas fa-check-circle"></i> Sin experiencia previa
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<!-- 🔹 SECCIÓN DE ESTADÍSTICAS -->
+<section class="stats-section">
+</section>
+
+<!-- 🔹 FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Acerca de LSPlay</h4>
+            <p>Plataforma interactiva para aprender lenguaje de señas de manera divertida y efectiva.</p>
+        </div>
+        
+        
+    </div>
+    
+    <div class="footer-logos">
+        <img src="../images/lf1.png" alt="Logo 1">
+        <img src="../images/trofeo.png" alt="Trofeo">
+        <img src="../images/crayo.jpeg" alt="Crayo">
+    </div>
+
+    <div class="footer-bottom">
+        <p class="creditos">
+            © 2026 LSPlay. Nos alegra que hayas visitado nuestra página y esperamos que el material educativo haya sido de utilidad.
+        </p>
+    </div>
+</footer>
+
+<!-- PANEL LOGIN -->
+<div id="panelLogin">
+    <button id="cerrarLogin"><i class="fas fa-times"></i></button>
+    <iframe src="login.html" frameborder="0" class="login-frame"></iframe>
+</div>
+
+<script src="../json/panel.js"></script>
+<script src="../js/menu.js"></script>
+
+</body>
+
+</html>

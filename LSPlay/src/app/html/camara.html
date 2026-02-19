@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Abecedario y Verbos | LSPlay</title>
+    <link rel="stylesheet" href="../css/camara.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="brand">
+        <img src="../images/logo.png" class="logo-img">
+        <span class="logo-text">LSPlay</span>
+    </div>
+
+    <a href="aprender.html" class="btn-volver">← Volver</a>
+</header>
+
+<section class="contenido">
+    <h1>Abecedario y Verbos</h1>
+    <p>Imita la seña frente a la cámara</p>
+
+    <!-- IMAGEN REFERENCIA -->
+    <div class="referencia">
+        <img src="../images/abecedario.png" alt="Referencia">
+        <p>Seña esperada</p>
+    </div>
+
+    <!-- CÁMARA -->
+    <div class="camara-box">
+        <video id="video" autoplay playsinline></video>
+        <p id="estado">Cámara apagada</p>
+        <button id="btnCamara">Iniciar cámara</button>
+    </div>
+</section>
+
+<script src="../js/camara.js"></script>
+<!-- LIBRERÍAS (siempre primero) -->
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+<!-- TUS ARCHIVOS -->
+<script src="../js/camara.js"></script>
+<script src="../js/deteccion.js"></script>
+
+</body>
+</html>

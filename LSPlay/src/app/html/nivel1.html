@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivel 1 - Abecedario A-J | LSPlay</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+    
+    <!-- Bibliotecas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header del Juego -->
+<header class="game-header">
+    <div class="game-navbar">
+        <a href="inicio_jugar.html" class="btn-exit">
+            <i class="fas fa-times"></i> Salir
+        </a>
+        
+        <div class="game-title">
+            <h2>Nivel 1: Abecedario A-J</h2>
+        </div>
+        
+        <div class="game-stats-mini">
+            <div class="stat-mini">
+                <i class="fas fa-heart"></i>
+                <span id="lives">3</span>
+            </div>
+            <div class="stat-mini">
+                <i class="fas fa-star"></i>
+                <span id="score">0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Barra de progreso -->
+    <div class="game-progress-bar">
+        <div class="progress-fill-game" id="progressBar"></div>
+        <span class="progress-text" id="progressText">Pregunta 1/15</span>
+    </div>
+</header>
+
+<!-- Área del Juego -->
+<section class="game-container">
+    
+    <!-- Pregunta Actual -->
+    <div class="question-card animate__animated animate__fadeIn" id="questionCard">
+        
+        <div class="question-number">
+            Pregunta <span id="currentQuestion">1</span> de 15
+        </div>
+        
+        <!-- Imagen de la seña -->
+        <div class="sign-display">
+            <div class="sign-image-wrapper">
+                <img id="signImage" src="../images/abc/avatar_A.png" alt="Seña" class="sign-image">
+                <!-- Placeholder si no hay imagen -->
+                <div id="signPlaceholder" class="sign-placeholder">
+                    <i class="fas fa-hand-fist"></i>
+                    <p>Observa la seña</p>
+                </div>
+            </div>
+            
+            <!-- Timer -->
+            <div class="question-timer">
+                <i class="fas fa-clock"></i>
+                <span id="timer">10</span>s
+            </div>
+        </div>
+        
+        <!-- Pregunta -->
+        <div class="question-text">
+            <h3>¿Qué letra representa esta seña?</h3>
+        </div>
+        
+        <!-- Opciones de respuesta -->
+        <div class="answer-options" id="answerOptions">
+            <!-- Se generarán dinámicamente -->
+        </div>
+        
+        <!-- Feedback -->
+        <div class="answer-feedback" id="feedback"></div>
+        
+    </div>
+    
+</section>
+
+<!-- Modal de Pausa -->
+<div id="pauseModal" class="modal">
+    <div class="modal-content pause-modal">
+        <h2><i class="fas fa-pause-circle"></i> Juego Pausado</h2>
+        <p>Tómate un respiro</p>
+        
+        <div class="pause-stats">
+            <div class="pause-stat">
+                <i class="fas fa-star"></i>
+                <span id="pauseScore">0 puntos</span>
+            </div>
+            <div class="pause-stat">
+                <i class="fas fa-check-circle"></i>
+                <span id="pauseCorrect">0 correctas</span>
+            </div>
+            <div class="pause-stat">
+                <i class="fas fa-times-circle"></i>
+                <span id="pauseWrong">0 incorrectas</span>
+            </div>
+        </div>
+        
+        <div class="modal-buttons">
+            <button class="btn-modal secondary" onclick="exitGame()">
+                <i class="fas fa-sign-out-alt"></i> Salir
+            </button>
+            <button class="btn-modal primary" onclick="resumeGame()">
+                <i class="fas fa-play"></i> Continuar
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Resultados -->
+<div id="resultsModal" class="modal">
+    <div class="modal-content results-modal">
+        <div class="results-header">
+            <div class="results-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h2 id="resultsTitle">¡Nivel Completado!</h2>
+        </div>
+        
+        <div class="results-body">
+            <!-- Estrellas ganadas -->
+            <div class="stars-earned">
+                <i class="fas fa-star star-result"></i>
+                <i class="fas fa-star star-result"></i>
+                <i class="fas fa-star star-result"></i>
+            </div>
+            
+            <!-- Estadísticas -->
+            <div class="results-stats">
+                <div class="result-stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="stat-data">
+                        <span class="stat-value" id="finalAccuracy">0%</span>
+                        <span class="stat-label">Precisión</span>
+                    </div>
+                </div>
+                
+                <div class="result-stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-data">
+                        <span class="stat-value" id="finalScore">0</span>
+                        <span class="stat-label">Puntos</span>
+                    </div>
+                </div>
+                
+                <div class="result-stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-data">
+                        <span class="stat-value" id="finalCorrect">0/15</span>
+                        <span class="stat-label">Correctas</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mensaje motivacional -->
+            <div class="motivation-message" id="motivationMessage">
+                ¡Excelente trabajo! Sigue así 🎉
+            </div>
+        </div>
+        
+        <div class="results-footer">
+            <button class="btn-modal secondary" onclick="goToLevels()">
+                <i class="fas fa-map"></i> Ver Niveles
+            </button>
+            <button class="btn-modal primary" onclick="retryLevel()">
+                <i class="fas fa-redo"></i> Jugar de Nuevo
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="../js/nivel_game.js"></script>
+
+</body>
+</html>

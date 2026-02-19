@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+video, canvas {
+  width: 100%;
+  border-radius: 12px;
+  background: #000;
+}
+
+.panel {
+  background: #020617;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.letter {
+  font-size: 6rem;
+  text-align: center;
+  margin: 20px 0;
+  color: #38bdf8;
+}
+
+.status {
+  text-align: center;
+  font-size: 1.2rem;
+}

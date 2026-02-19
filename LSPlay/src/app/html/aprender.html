@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprender | LSPlay</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+    
+    <!-- Bibliotecas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- 🔹 NAVBAR CON NAVEGACIÓN COMPLETA -->
+<header class="header">
+    <nav class="navbar">
+    
+        <!-- LOGO + TEXTO -->
+        <a href="inicio.html" class="brand">
+            <img src="../images/logo.png" alt="LSPlay Logo" class="logo-img">
+            <span class="logo-text">LSPlay</span>
+        </a>
+
+        <!-- MENÚ DE NAVEGACIÓN -->
+        <ul class="nav-menu">
+            <li><a href="inicio.html">
+                <i class="fas fa-home"></i> Inicio
+            </a></li>
+            <li><a href="aprender.html" class="active">
+                <i class="fas fa-book"></i> Aprender
+            </a></li>
+            <li><a href="inicio_jugar.html">
+                <i class="fas fa-gamepad"></i> Jugar
+            </a></li>
+            <li><a href="instructor.html">
+                <i class="fas fa-chalkboard-teacher"></i> Instructor
+            </a></li>
+        </ul>
+
+        <!-- BOTÓN LOGIN + MENÚ MÓVIL -->
+        <div class="nav-right">
+            <a href="#" class="btn-login" id="abrirLogin">
+                <i class="fas fa-user"></i> Iniciar Sesión
+            </a>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="hero-text animate__animated animate__fadeInDown">
+        <h1>Aprender Lengua de Señas</h1>
+        <h2>Explora los diferentes temas disponibles</h2>
+        <p>Selecciona un tema para comenzar tu aprendizaje</p>
+    </div>
+</header>
+
+<!-- 🔹 SECCIÓN DE TEMAS DE APRENDIZAJE -->
+<section class="learning-section">
+    <div class="section-title animate__animated animate__fadeIn">
+        <h2>Temas Disponibles</h2>
+        <div class="title-underline"></div>
+        <p class="section-subtitle">Comienza tu viaje de aprendizaje eligiendo uno de estos temas</p>
+    </div>
+
+    <div class="learning-container">
+        
+        <!-- TARJETA ABECEDARIO -->
+        <a href="aprende.html" class="learning-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+            <div class="learning-card-header">
+                <div class="learning-icon-wrapper">
+                    <div class="learning-icon abecedario-icon">
+                        <i class="fas fa-spell-check"></i>
+                    </div>
+                </div>
+                <div class="learning-badge">
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            
+            <div class="learning-card-body">
+                <h3>Abecedario</h3>
+                <p>Aprende las señas de todas las letras del alfabeto en lengua de señas</p>
+                
+                <div class="learning-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>27 Lecciones</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-clock"></i>
+                        <span>30 min</span>
+                    </div>
+                </div>
+                
+                <div class="learning-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text">0% Completado</span>
+                </div>
+            </div>
+            
+            <div class="learning-card-footer">
+                <span class="btn-start">
+                    Comenzar <i class="fas fa-arrow-right"></i>
+                </span>
+            </div>
+        </a>
+
+        <!-- TARJETA VERBOS -->
+        <a href="verbos.html" class="learning-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+            <div class="learning-card-header">
+                <div class="learning-icon-wrapper">
+                    <div class="learning-icon verbos-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                </div>
+                <div class="learning-badge verbos-badge">
+                    <i class="fas fa-fire"></i>
+                </div>
+            </div>
+            
+            <div class="learning-card-body">
+                <h3>Verbos</h3>
+                <p>Domina las señas de los verbos más comunes y amplía tu vocabulario</p>
+                
+                <div class="learning-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>50+ Verbos</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-clock"></i>
+                        <span>45 min</span>
+                    </div>
+                </div>
+                
+                <div class="learning-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text">0% Completado</span>
+                </div>
+            </div>
+            
+            <div class="learning-card-footer">
+                <span class="btn-start">
+                    Comenzar <i class="fas fa-arrow-right"></i>
+                </span>
+            </div>
+        </a>
+
+        <!-- TARJETA NÚMEROS (Bloqueada - Próximamente) -->
+        <div class="learning-card locked animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
+            <div class="learning-card-header">
+                <div class="learning-icon-wrapper">
+                    <div class="learning-icon numeros-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                </div>
+                <div class="learning-badge locked-badge">
+                    <i class="fas fa-lock"></i>
+                </div>
+            </div>
+            
+            <div class="learning-card-body">
+                <h3>Números</h3>
+                <p>Aprende a representar números del 0 al 100 en lengua de señas</p>
+                
+                <div class="learning-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Próximamente</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-clock"></i>
+                        <span>40 min</span>
+                    </div>
+                </div>
+                
+                <div class="locked-overlay">
+                    <i class="fas fa-lock"></i>
+                    <p>Próximamente</p>
+                </div>
+            </div>
+            
+            <div class="learning-card-footer">
+                <span class="btn-locked">
+                    Bloqueado <i class="fas fa-lock"></i>
+                </span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- 🔹 SECCIÓN DE BENEFICIOS -->
+<section class="benefits-section">
+   
+</section>
+
+<!-- 🔹 FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Acerca de LSPlay</h4>
+            <p>Plataforma interactiva para aprender lenguaje de señas de manera divertida y efectiva.</p>
+        </div>
+        
+        
+    </div>
+    
+    <div class="footer-logos">
+        <img src="../images/lf1.png" alt="Logo 1">
+        <img src="../images/trofeo.png" alt="Trofeo">
+        <img src="../images/crayo.jpeg" alt="Crayo">
+    </div>
+
+    <div class="footer-bottom">
+        <p class="creditos">
+            © 2024 LSPlay. Nos alegra que hayas visitado nuestra página y esperamos que el material educativo haya sido de utilidad.
+        </p>
+    </div>
+</footer>
+
+<!-- PANEL LOGIN -->
+<div id="panelLogin">
+    <button id="cerrarLogin"><i class="fas fa-times"></i></button>
+    <iframe src="login.html" frameborder="0" class="login-frame"></iframe>
+</div>
+
+<script src="../json/panel.js"></script>
+<script src="../js/menu.js"></script>
+
+</body>
+</html>

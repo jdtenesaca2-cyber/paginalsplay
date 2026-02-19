@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Nivel 3 | LSPlay</title>
+    <link rel="stylesheet" href="../css/inicioj.css" />
+</head>
+
+<body>
+
+<header class="header">
+    <h1>Nivel 3</h1>
+    <p>Imita la seña frente a la cámara</p>
+     <a href="inicio_jugar.html" class="btn-login">⟵ Volver a los juegos</a>
+</header>
+
+<section class="game">
+
+    <h2>Realiza esta seña</h2>
+
+    <div class="game-card">
+
+        <!-- Imagen referencia -->
+        <img src="../images/dormir.jpg" alt="Seña referencia" />
+
+        <!-- Video cámara -->
+        <video id="video" autoplay playsinline></video>
+
+        <!-- Estado -->
+        <div id="estado" class="pantalla">
+            Cámara apagada
+        </div>
+
+        <!-- Botones para controlar cámara -->
+        <div style="margin-top: 10px;">
+            <button onclick="iniciarCamara()">Encender cámara</button>
+            <button onclick="apagarCamara()">Apagar cámara</button>
+            <button onclick="evaluarInterpretacion()">Estoy listo</button>
+        </div>
+
+        <!-- Resultado evaluación -->
+        <div id="resultadoEvaluacion" class="pantalla" style="margin-top:15px;">
+            Esperando evaluación...
+        </div>
+
+    </div>
+
+</section>
+
+<script src="../json/camara.js"></script>
+
+</body>
+</html>
